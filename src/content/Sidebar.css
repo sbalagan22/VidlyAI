@@ -1,0 +1,296 @@
+/* Sidebar Container */
+.vidly-sidebar {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    background-color: #1a1a1a;
+    /* Dark Grey Override */
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: "Geist", sans-serif;
+    font-size: 15px;
+    /* Reduced base size */
+}
+
+/* Header / Navigation */
+.vidly-header {
+    border-bottom: 1px solid var(--border);
+    background-color: rgba(26, 26, 26, 0.9);
+    /* Match dark grey with transparency */
+    backdrop-filter: blur(4px);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: 1rem 1.5rem;
+    /* py-4 px-6 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+}
+
+.vidly-header-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.vidly-header-logo {
+    width: 2.5rem;
+    /* w-10 */
+    height: 2.5rem;
+    /* h-10 */
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.vidly-title {
+    font-weight: 700;
+    font-size: 1.25rem;
+    /* text-xl */
+    color: white;
+}
+
+.vidly-settings-btn {
+    height: 3rem;
+    /* w-12 */
+    width: 3rem;
+    /* h-12 */
+    padding: 0;
+}
+
+.vidly-settings-icon {
+    width: 2rem;
+    /* w-8 */
+    height: 2rem;
+    /* h-8 */
+}
+
+/* Main Content Area */
+.vidly-content {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Empty State / API Key Required */
+.vidly-centered-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.vidly-card-inner {
+    background-color: #262626;
+    border: 1px solid hsla(var(--accent), 0.3);
+    backdrop-filter: blur(4px);
+    padding: 2rem;
+    max-width: 24rem;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Messages List */
+.vidly-messages-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    /* p-6 */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* space-y-6 */
+}
+
+/* Message Bubbles */
+.vidly-message-wrapper {
+    display: flex;
+}
+
+.vidly-message-wrapper.user {
+    justify-content: flex-end;
+}
+
+.vidly-message-wrapper.assistant {
+    justify-content: flex-start;
+}
+
+.vidly-message-bubble {
+    max-width: 85%;
+    padding: 1.25rem;
+    /* p-5 */
+    border-radius: 1.5rem;
+    /* rounded-3xl */
+    font-size: 15px;
+    /* Reduced text size */
+    font-weight: 500;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+.vidly-message-bubble.user {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    border-bottom-right-radius: 0.125rem;
+}
+
+.vidly-message-bubble.assistant {
+    background-color: #2a2a2a;
+    /* Lighter grey for bubbles */
+    color: #f0f0f0;
+    border-bottom-left-radius: 0.125rem;
+}
+
+.vidly-message-bubble.system {
+    background-color: hsla(var(--destructive), 0.1);
+    color: var(--destructive);
+    border: 1px solid hsla(var(--destructive), 0.2);
+}
+
+/* Timestamp links */
+.vidly-timestamp {
+    color: #3ea6ff;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.vidly-timestamp:hover {
+    text-decoration: underline;
+}
+
+/* Header Badge */
+.vidly-video-badge {
+    margin-left: 8px;
+    font-size: 10px;
+    background: #606060;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+
+.vidly-video-badge.success {
+    background: var(--accent-color);
+}
+
+.vidly-video-badge.error {
+    background: #ff4e45;
+}
+
+/* Loading Indicator */
+.vidly-loading-wrapper {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.vidly-loading-bubble {
+    background: #272727;
+    margin-right: auto;
+    border-top-left-radius: 4px;
+    padding: 1rem 1.25rem;
+    border-radius: 1.5rem;
+    border-bottom-left-radius: 0.125rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    height: 3.5rem;
+}
+
+.vidly-dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 9999px;
+    animation: bounce 1s infinite;
+}
+
+/* Input Area */
+.vidly-input-area {
+    padding: 1.25rem;
+    /* p-5 */
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+    flex-shrink: 0;
+}
+
+.vidly-input-form {
+    display: flex;
+    gap: 0.75rem;
+    position: relative;
+}
+
+.vidly-input-field {
+    flex: 1;
+    padding-right: 3.5rem;
+    /* pr-14 */
+    padding-left: 1.5rem;
+    /* pl-6 */
+    /* increased py again */
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    height: auto;
+    font-size: 16px;
+    /* Increased font size */
+    border-radius: 9999px;
+    background-color: #2a2a2a;
+    border-color: transparent;
+    color: white;
+    transition: all 0.2s;
+}
+
+.vidly-input-field:focus {
+    border-color: var(--primary);
+    background-color: #333;
+    outline: none;
+}
+
+.vidly-send-btn {
+    position: absolute;
+    right: 0.75rem;
+    /* right-3 close to edge */
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2.75rem;
+    width: 2.75rem;
+    border-radius: 9999px;
+    background-color: transparent;
+    color: #808080;
+    /* Grey default */
+    transition: color 0.2s;
+}
+
+/* When active (has text via class or prop if possible, but we'll use a selector approach or rely on React state passing a class) */
+.vidly-send-btn.active {
+    color: #f75c46;
+    /* Orange when typing */
+}
+
+/* No hover change requested */
+.vidly-send-btn:hover {
+    background-color: transparent;
+    /* Prevent ghost variant bg */
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}

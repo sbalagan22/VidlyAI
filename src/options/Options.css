@@ -1,0 +1,292 @@
+/* Options Page Container */
+.vidly-options-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #141414, #000000, #1a0500);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: "Geist",
+        sans-serif;
+}
+
+body {
+    background-color: #000000;
+    margin: 0;
+}
+
+/* Hero Section */
+.vidly-hero-section {
+    max-width: 72rem;
+    /* max-w-6xl */
+    margin: 0 auto;
+    padding: 2.5rem 1rem;
+    /* py-10 px-4 */
+}
+
+@media (min-width: 640px) {
+    .vidly-hero-section {
+        padding: 5rem 1.5rem;
+        /* py-20 px-6 */
+    }
+}
+
+@media (min-width: 1024px) {
+    .vidly-hero-section {
+        padding: 5rem 2rem;
+        /* lg:px-8 */
+    }
+}
+
+.vidly-hero-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    /* space-y-8 */
+}
+
+.vidly-brand-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.vidly-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    /* Handle mobile */
+}
+
+.vidly-hero-logo-box {
+    width: 4rem;
+    /* w-16 mobile */
+    height: 4rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    overflow: hidden;
+    /* Removed background for clean PNG look */
+    flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+    .vidly-hero-logo-box {
+        width: 6rem;
+        /* Match text height approx */
+        height: 6rem;
+    }
+}
+
+.vidly-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.vidly-hero-title {
+    font-size: 3.75rem;
+    /* text-6xl */
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    padding-bottom: 0.5rem;
+    /* Account for descenders */
+    margin: 0;
+}
+
+@media (min-width: 640px) {
+    .vidly-hero-title {
+        font-size: 6rem;
+        /* text-8xl */
+    }
+}
+
+.vidly-hero-subtitle {
+    font-size: 1.5rem;
+    /* text-2xl */
+    color: var(--muted-foreground);
+    max-width: 42rem;
+    margin: 0 auto;
+    text-wrap: balance;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+@media (min-width: 640px) {
+    .vidly-hero-subtitle {
+        font-size: 2rem;
+        /* text-4xl */
+    }
+}
+
+/* Config Section */
+.vidly-config-wrapper {
+    margin-top: 3rem;
+    /* mt-12 */
+    display: flex;
+    justify-content: center;
+}
+
+.vidly-config-card {
+    background-color: hsla(var(--card), 0.5);
+    border: 1px solid hsla(var(--accent), 0.5);
+    backdrop-filter: blur(4px);
+    width: 100%;
+    max-width: 28rem;
+    /* max-w-md */
+}
+
+.vidly-config-card.configured {
+    padding: 1.5rem;
+    /* p-6 */
+}
+
+.vidly-config-card.empty {
+    padding: 2rem;
+    /* p-8 */
+}
+
+.vidly-config-status {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.vidly-status-icon-box {
+    width: 2.5rem;
+    /* w-10 */
+    height: 2.5rem;
+    /* h-10 */
+    background-color: hsla(var(--accent), 0.2);
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vidly-status-text {
+    text-align: left;
+}
+
+.vidly-status-label {
+    font-size: 0.875rem;
+    /* text-sm */
+    color: var(--muted-foreground);
+}
+
+.vidly-status-value {
+    font-weight: 600;
+}
+
+.vidly-empty-state {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.vidly-empty-icon {
+    width: 3rem;
+    /* w-12 */
+    height: 3rem;
+    /* h-12 */
+    color: var(--accent);
+    margin: 0 auto 0.75rem;
+    opacity: 0.5;
+}
+
+/* Modal */
+.vidly-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.vidly-modal-content {
+    max-width: 28rem;
+    /* max-w-md */
+    width: 100%;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    /* p-8 */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    /* space-y-6 */
+    border-radius: calc(var(--radius) + 2px);
+}
+
+.vidly-provider-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+}
+
+.vidly-provider-btn {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border-width: 2px;
+    border-style: solid;
+    font-weight: 500;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+    /* text-sm */
+    cursor: pointer;
+}
+
+.vidly-provider-btn.selected {
+    border-color: var(--accent);
+    background-color: hsla(var(--accent), 0.1);
+    color: var(--accent);
+}
+
+.vidly-provider-btn.unselected {
+    border-color: var(--border);
+    color: var(--foreground);
+    background-color: transparent;
+}
+
+.vidly-provider-btn.unselected:hover {
+    border-color: hsla(var(--border), 0.8);
+}
+
+.vidly-modal-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+#api-key {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.05);
+    /* Slight white tint for visibility */
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+#api-key::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* Ensure the eye icon button is visible */
+.vidly-modal-content button.absolute {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.vidly-modal-content button.absolute:hover {
+    color: white;
+}

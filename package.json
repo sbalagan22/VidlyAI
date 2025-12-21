@@ -1,0 +1,45 @@
+{
+  "name": "vidly-ai",
+  "version": "1.0.0",
+  "main": "content.js",
+  "scripts": {
+    "build": "vite build -c vite.config.options.ts && vite build -c vite.config.content.ts && vite build -c vite.config.background.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "youtube",
+    "ai",
+    "extension",
+    "chat",
+    "transcript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "description": "AI companion for YouTube with automated transcripts and multi-provider chat.",
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/chrome": "^0.1.32",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.4.23",
+    "postcss": "^8.5.6",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "tailwindcss": "^4.1.18",
+    "vite": "^6.4.1"
+  },
+  "dependencies": {
+    "@google/genai": "^1.34.0",
+    "@google/generative-ai": "^0.24.1",
+    "@playzone/youtube-transcript": "^1.0.0",
+    "@radix-ui/react-label": "^2.1.8",
+    "@radix-ui/react-slot": "^1.2.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.562.0",
+    "tailwind-merge": "^3.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "youtube-transcript": "^1.2.1"
+  }
+}
