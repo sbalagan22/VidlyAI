@@ -75,7 +75,7 @@ const Sidebar: React.FC = () => {
             if (areaName === 'local' && changes.apiKey) {
                 const newKey = changes.apiKey.newValue;
                 setHasApiKey(!!newKey);
-                setApiKeyStr(newKey || '');
+                setApiKeyStr(typeof newKey === 'string' ? newKey : '');
             }
         };
         chrome.storage.onChanged.addListener(listener);
@@ -163,9 +163,9 @@ const Sidebar: React.FC = () => {
         setInput('');
         setIsLoading(true);
 
-        const context = transcript.length > 0
-            ? TranscriptService.formatForPrompt(transcript)
-            : '';
+        const rawContext = transcript.length > 0 ? TranscriptService.formatForPrompt(transcript) : '';
+        const context = TranscriptService.truncateTranscript(rawContext);
+        console.log(`[VidlyAI] Sending request with context length: ${context.length} characters.`);
 
         try {
             chrome.runtime.sendMessage({

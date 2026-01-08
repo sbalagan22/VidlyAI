@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "content.js",
   "scripts": {
-    "build": "vite build -c vite.config.options.ts && vite build -c vite.config.content.ts && vite build -c vite.config.background.ts",
+    "build": "vite build -c vite.config.options.ts && vite build -c vite.config.content.ts && vite build -c vite.config.background.ts && cp manifest.dist.json dist/manifest.json",
+    "zip": "cd dist && zip -r ../extension.zip .",
+    "package": "npm run build && npm run zip",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

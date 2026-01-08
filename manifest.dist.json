@@ -4,9 +4,9 @@
     "version": "1.0",
     "description": "AI companion for YouTube.",
     "icons": {
-        "16": "dist/logo.png",
-        "48": "dist/logo.png",
-        "128": "dist/logo.png"
+        "16": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
     },
     "permissions": [
         "storage",
@@ -17,7 +17,7 @@
         "https://www.youtube.com/*"
     ],
     "background": {
-        "service_worker": "dist/background.js"
+        "service_worker": "background.js"
     },
     "content_scripts": [
         {
@@ -25,15 +25,15 @@
                 "*://*.youtube.com/*"
             ],
             "js": [
-                "dist/content.js"
+                "content.js"
             ],
             "css": [
-                "dist/vidly-ai.css"
+                "vidly-ai.css"
             ],
             "run_at": "document_idle"
         }
     ],
-    "options_page": "dist/options.html",
+    "options_page": "options.html",
     "action": {
         "default_title": "Configure VidlyAI"
     }

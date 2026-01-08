@@ -166,4 +166,14 @@ export class TranscriptService {
         const s = seconds % 60;
         return `${m}:${s.toString().padStart(2, '0')}`;
     }
+
+    /**
+     * Truncates transcript to fit within token limits (approx 250k tokens limit for Free Tier)
+     * 1 token is roughly 4 characters. 100k tokens approx 400k characters.
+     */
+    static truncateTranscript(transcript: string, maxChars: number = 400000): string {
+        if (transcript.length <= maxChars) return transcript;
+        console.warn(`[TranscriptService] Truncating transcript from ${transcript.length} to ${maxChars} characters.`);
+        return transcript.substring(0, maxChars) + "\n\n[Transcript truncated due to length limits to stay within AI provider quota...]";
+    }
 }

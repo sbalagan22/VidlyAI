@@ -3,7 +3,7 @@ import { Button } from "../components/ui/button"
 // import { Input } from "../components/ui/input" 
 import { Label } from "../components/ui/label"
 import { Card } from "../components/ui/card"
-import { Check, Settings, Eye, EyeOff } from "lucide-react"
+import { Check, Settings, Eye, EyeOff, Shield } from "lucide-react"
 import logo from "../assets/logo.png"
 import "./Options.css"
 
@@ -106,6 +106,27 @@ export default function Options() {
                                 </div>
                             </Card>
                         )}
+                    </div>
+
+                    {/* Privacy Disclosure */}
+                    <div className="mt-8 max-w-md mx-auto text-center">
+                        <div className="flex items-center justify-center gap-2 text-white/60 mb-2">
+                            <Shield className="w-4 h-4" />
+                            <span className="text-sm font-medium">Privacy & Data Security</span>
+                        </div>
+                        <p className="text-xs text-white/40 leading-relaxed">
+                            VidlyAI runs entirely in your browser. Your API keys are stored locally.
+                            When you use the extension, video transcripts and prompts are sent directly to your selected AI provider
+                            (e.g., OpenAI, Google) to generate responses. We do not store or collect your data.
+                        </p>
+                        <a
+                            href="https://github.com/sbalagan22/VidlyAI/blob/main/PRIVACY_POLICY.md"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-white/60 hover:text-white underline mt-2 inline-block transition-colors"
+                        >
+                            View Privacy Policy
+                        </a>
                     </div>
                 </div>
             </section>
