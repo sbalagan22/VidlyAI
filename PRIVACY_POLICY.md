@@ -33,5 +33,4 @@ VidlyAI does not collect or store your data. However, the extension interacts wi
 We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date at the top of this policy.
 
 ## 6. Contact Us
-If you have any questions about this Privacy Policy, please contact us at:
-[Insert Your Contact Email Here]
+If you have any questions about this Privacy Policy, please contact us at: sbalagan22@gmail.com
